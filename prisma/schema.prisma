@@ -50,3 +50,13 @@ model Admin {
 
   @@map("admins")
 }
+
+model Gallery {
+  id        String   @id @default(cuid())
+  title     String
+  category  String
+  image     String
+  createdAt DateTime @default(now())
+
+  @@map("galleries")
+}
