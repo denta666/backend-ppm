@@ -1,8 +1,21 @@
 import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
 
 async function main() {
+  // Seed Admin User
+const hashedPassword = await bcrypt.hash('admin123', 10);
+await prisma.admin.upsert({
+  where: { username: 'admin' },
+  update: {},
+  create: {
+    username: 'admin',
+    password: hashedPassword,
+  },
+  });
+  console.log('✅ User admin dibuat');
+
   // Seed Reviews
   const reviews = [
     { name: 'Budi Santoso', rating: 5, comment: 'Warkop paling nyaman di Slawi! Kopinya enak, Wi-Fi kencang, dan suasananya bikin betah berlama-lama.' },

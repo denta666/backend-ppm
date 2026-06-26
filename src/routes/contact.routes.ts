@@ -6,7 +6,7 @@ import { createContactSchema } from '../validations/contact.validation';
 const router = Router();
 
 router.post('/', validate(createContactSchema), ContactController.create);
-router.get('/', ContactController.findAll);
+router.get('/', ContactController.getAll);
 router.delete('/:id', ContactController.delete);
 
 export default router;

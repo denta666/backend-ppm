@@ -1,12 +1,13 @@
+// src/services/contact.service.ts
 import prisma from '../config/database';
 import { CreateContactInput } from '../validations/contact.validation';
 
-export const ContactService = {
+const ContactService = {
   async create(data: CreateContactInput) {
     return prisma.contact.create({ data });
   },
 
-  async findAll() {
+  async getAll() {
     return prisma.contact.findMany({
       orderBy: { createdAt: 'desc' },
     });
@@ -20,3 +21,5 @@ export const ContactService = {
     return prisma.contact.findUnique({ where: { id } });
   },
 };
+
+export { ContactService };

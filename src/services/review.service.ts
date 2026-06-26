@@ -6,7 +6,7 @@ export const ReviewService = {
     return prisma.review.create({ data });
   },
 
-  async findAll() {
+  async getAll() {
     return prisma.review.findMany({
       orderBy: { createdAt: 'desc' },
     });
@@ -20,3 +20,5 @@ export const ReviewService = {
     return prisma.review.findUnique({ where: { id } });
   },
 };
+
+export default ReviewService;

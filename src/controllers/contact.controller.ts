@@ -12,9 +12,9 @@ export const ContactController = {
     }
   },
 
-  async findAll(req: Request, res: Response, next: NextFunction): Promise<void> {
+  async getAll(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const contacts = await ContactService.findAll();
+      const contacts = await ContactService.getAll();
       sendSuccess(res, contacts, 'Data kontak berhasil diambil');
     } catch (error) {
       next(error);

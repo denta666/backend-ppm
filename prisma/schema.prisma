@@ -27,3 +27,26 @@ model Review {
 
   @@map("reviews")
 }
+
+model Menu {
+  id          String   @id @default(cuid())
+  name        String
+  category    String
+  price       Int
+  description String
+  image       String
+  isFavorite  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("menus")
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+
+  @@map("admins")
+}

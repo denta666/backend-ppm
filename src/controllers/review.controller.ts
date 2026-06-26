@@ -13,14 +13,13 @@ export const ReviewController = {
   },
 
   async findAll(req: Request, res: Response, next: NextFunction): Promise<void> {
-    try {
-      const reviews = await ReviewService.findAll();
-      sendSuccess(res, reviews, 'Data testimoni berhasil diambil');
-    } catch (error) {
-      next(error);
-    }
-  },
-
+  try {
+    const reviews = await ReviewService.getAll(); // ← ganti findAll() jadi getAll()
+    sendSuccess(res, reviews, 'Data testimoni berhasil diambil');
+  } catch (error) {
+    next(error);
+  }
+},
   async delete(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       const { id } = req.params;
