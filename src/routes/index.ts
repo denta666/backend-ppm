@@ -11,6 +11,6 @@ router.use('/contact', contactRoutes);
 router.use('/reviews', reviewRoutes);
 router.use('/auth', authRoutes);
 router.use('/menus', menuRoutes);
-router.use('/gallery', galleryRoutes);
+router.use('/galleries', galleryRoutes);
 
 export default router;
