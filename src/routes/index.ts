@@ -5,6 +5,8 @@ import authRoutes from './auth.routes';
 import menuRoutes from './menu.routes';
 import galleryRoutes from './gallery.routes';
 
+console.log("ROUTES INDEX LOADED");
+
 const router = Router();
 
 router.get('/test-route', (_req, res) => {
