@@ -45,7 +45,7 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 // TEST sementara
-app.post('/api/test', (_req, res) => {
+app.get('/api/test', (_req, res) => {
   res.json({ message: 'API OK' });
 });
 
