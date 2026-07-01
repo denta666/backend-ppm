@@ -44,6 +44,10 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/health', (_req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
+// TEST sementara
+app.post('/api/test', (_req, res) => {
+  res.json({ message: 'API OK' });
+});
 
 // API routes
 app.use('/api', routes);
